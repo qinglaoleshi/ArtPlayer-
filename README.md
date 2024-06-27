@@ -123,19 +123,6 @@ var art = new Artplayer({
 
 [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-## Donations
-
-We accept donations through these channels:
-
-![pay](./images/pay.png)
-
--   [Patreon](https://www.patreon.com/artplayer)
--   [Paypal](https://www.paypal.me/harveyzack)
-
-## QQ Group
-
-![QQ Group](./images/qqgroup.png)
-
 ## License
 
 MIT © Harvey Zack
