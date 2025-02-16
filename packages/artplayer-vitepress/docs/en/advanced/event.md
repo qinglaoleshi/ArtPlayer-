@@ -571,9 +571,10 @@ art.on('subtitleOffset', (offset) => {
     console.info('subtitleOffset', offset);
 });
 ```
-## `subtitleUpdate`
 
-Triggered when the subtitle updates
+## `subtitleBeforeUpdate`
+
+Triggered before subtitles are updated
 
 <div className="run-code">▶ Run Code</div>
 
@@ -586,8 +587,28 @@ var art = new Artplayer({
     },
 });
 
-art.on('subtitleUpdate', (text) => {
-    console.info('subtitleUpdate', text);
+art.on('subtitleBeforeUpdate', (cues) => {
+    console.info('subtitleBeforeUpdate', cues);
+});
+```
+
+## `subtitleAfterUpdate`
+
+Triggered when the subtitles are updated
+
+<div className="run-code">▶ Run Code</div>
+
+```js{9}
+var art = new Artplayer({
+    container: '.artplayer-app',
+    url: '/assets/sample/video.mp4',
+    subtitle: {
+        url: '/assets/sample/subtitle.srt',
+    },
+});
+
+art.on('subtitleAfterUpdate', (cues) => {
+    console.info('subtitleAfterUpdate', cues);
 });
 ```
 
@@ -606,31 +627,8 @@ var art = new Artplayer({
     },
 });
 
-art.on('subtitleLoad', (url) => {
-    console.info('subtitleLoad', url);
-});
-```
-## `subtitleSwitch`
-
-Triggered when subtitles switch
-
-<div className="run-code">▶ Run Code</div>
-
-```js{13}
-var art = new Artplayer({
-    container: '.artplayer-app',
-    url: '/assets/sample/video.mp4',
-    subtitle: {
-        url: '/assets/sample/subtitle.srt',
-    },
-});
-
-art.on('ready', () => {
-    art.subtitle.url = '/assets/sample/subtitle.ass';
-});
-
-art.on('subtitleSwitch', (url) => {
-    console.info('subtitleSwitch', url);
+art.on('subtitleLoad', (option, cues) => {
+    console.info('subtitleLoad', cues, option);
 });
 ```
 
@@ -784,6 +782,23 @@ var art = new Artplayer({
 
 art.on('muted', (state) => {
     console.log(state);
+});
+```
+
+## `keydown`
+
+Listen to the `keydown` event from `document`
+
+<div className="run-code">▶ Run Code</div>
+
+```js{6}
+var art = new Artplayer({
+    container: '.artplayer-app',
+    url: '/assets/sample/video.mp4',
+});
+
+art.on('keydown', (event) => {
+    console.log(event.code);
 });
 ```
 

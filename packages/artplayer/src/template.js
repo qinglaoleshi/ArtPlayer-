@@ -1,4 +1,4 @@
-import { supportsFlex, errorHandle, query, addClass, isMobile } from './utils';
+import { supportsFlex, errorHandle, query, addClass, isMobile, replaceElement } from './utils';
 
 export default class Template {
     constructor(art) {
@@ -124,6 +124,17 @@ export default class Template {
         this.$infoClose = this.query('.art-info-close');
         this.$contextmenu = this.query('.art-contextmenus');
 
+        if (option.proxy) {
+            const video = option.proxy.call(this.art, this.art);
+            errorHandle(
+                video instanceof HTMLVideoElement || video instanceof HTMLCanvasElement,
+                `Function 'option.proxy' needs to return 'HTMLVideoElement' or 'HTMLCanvasElement'`,
+            );
+            replaceElement(video, this.$video);
+            video.className = 'art-video';
+            this.$video = video;
+        }
+
         if (option.backdrop) {
             addClass(this.$player, 'art-backdrop');
         }
@@ -134,6 +145,7 @@ export default class Template {
     }
 
     destroy(removeHtml) {
+        this.$video.src = '';
         if (removeHtml) {
             this.$container.innerHTML = '';
         } else {

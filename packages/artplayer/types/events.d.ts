@@ -1,4 +1,5 @@
 import { AspectRatio, Flip } from './player';
+import { Subtitle } from './subtitle';
 
 export type Bar = 'loaded' | 'played' | 'hover';
 
@@ -36,9 +37,10 @@ export type Events = {
     setting: [state: boolean];
     hotkey: [event: Event];
     destroy: [];
-    subtitleUpdate: [text: string];
-    subtitleLoad: [url: string];
-    subtitleSwitch: [url: string];
+    subtitleOffset: [offset: number];
+    subtitleBeforeUpdate: [cue: VTTCue];
+    subtitleAfterUpdate: [cue: VTTCue];
+    subtitleLoad: [cues: VTTCue[], option: Subtitle];
     focus: [event: Event];
     blur: [event: Event];
     dblclick: [event: Event];
@@ -63,8 +65,8 @@ export type Events = {
     play: [];
     screenshot: [dataUri: string];
     seek: [currentTime: number];
-    subtitleOffset: [offset: number];
     restart: [url: string];
     muted: [state: boolean];
     setBar: [type: Bar, percentage: number, event?: Event];
+    keydown: [event: KeyboardEvent];
 };

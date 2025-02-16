@@ -66,27 +66,36 @@ const config = {
           collapsible: true,
           items: [
             { text: '🎉 弹幕库', link: '/plugin/danmuku' },
+            { text: '弹幕遮罩', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-danmuku/index.js%0A./uncompiled/artplayer-plugin-danmuku-mask/index.js&example=danmuku.mask' },
             { text: '视频广告', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-ads/index.js&example=ads' },
             { text: 'Iframe 控制', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-iframe/index.js&example=iframe' },
-            { text: 'Hls 画质', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/hls.js/8.0.0-beta.3/hls.min.js%0A./uncompiled/artplayer-plugin-hls-quality/index.js&example=hls.quality' },
-            { text: 'Dash 画质', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.5.2/dash.all.min.js%0A./uncompiled/artplayer-plugin-dash-quality/index.js&example=dash.quality' },
+            { text: 'Hls 控制', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.17/hls.min.js%0A./uncompiled/artplayer-plugin-hls-control/index.js&example=hls.control' },
+            { text: 'Dash 控制', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.5.2/dash.all.min.js%0A./uncompiled/artplayer-plugin-dash-control/index.js&example=dash.control' },
             { text: 'Vtt 缩略图', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-vtt-thumbnail/index.js&example=vtt.thumbnail'},
             { text: '多重字幕', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-multiple-subtitles/index.js&example=multiple.subtitles'},
             { text: 'Ass 字幕', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-libass/index.js&example=libass'},
             { text: 'Chromecast', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-chromecast/index.js&example=chromecast'},
             { text: 'Vast 广告', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-vast/index.js&example=vast'},        
             { text: '视频章节', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-chapter/index.js&example=chapter'},        
+            { text: '视频背光', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-ambilight/index.js&example=ambilight'},        
           ]
         },
         {
           text: '第三方库',
           collapsible: true,
           items: [
-            { text: 'hls.js', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/hls.js/8.0.0-beta.3/hls.min.js&example=hls' },
+            { text: 'hls.js', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.17/hls.min.js&example=hls' },
             { text: 'flv.js', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.6.2/flv.min.js&example=flv' },
             { text: 'dash.js', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.5.2/dash.all.min.js&example=dash' },
             { text: 'mpegts.js', link: 'https://artplayer.org/?libs=https://cdn.jsdelivr.net/npm/mpegts.js@1.7.3/dist/mpegts.min.js&example=mpegts' },
             { text: 'webtorrent.js', link: 'https://artplayer.org/?libs=https://cdn.jsdelivr.net/npm/webtorrent@1/webtorrent.min.js&example=webtorrent' },
+          ]
+        },
+        {
+          text: '代理',
+          collapsible: true,
+          items: [
+            { text: 'Canvas', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-proxy-canvas/index.js&example=canvas' },
           ]
         },
       ],
@@ -128,25 +137,33 @@ const config = {
           items: [
             { text: 'Advertise', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-ads/index.js&example=ads' },
             { text: 'Iframe Control', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-iframe/index.js&example=iframe' },
-            { text: 'Hls Quality', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/hls.js/8.0.0-beta.3/hls.min.js%0A./uncompiled/artplayer-plugin-hls-quality/index.js&example=hls.quality' },
-            { text: 'Dash Quality', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.5.2/dash.all.min.js%0A./uncompiled/artplayer-plugin-dash-quality/index.js&example=dash.quality' },
+            { text: 'Hls Control', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.17/hls.min.js%0A./uncompiled/artplayer-plugin-hls-control/index.js&example=hls.control' },
+            { text: 'Dash Control', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.5.2/dash.all.min.js%0A./uncompiled/artplayer-plugin-dash-control/index.js&example=dash.control' },
             { text: 'Vtt Thumbnail', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-vtt-thumbnail/index.js&example=vtt.thumbnail'},
             { text: 'Multiple Subtitles', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-multiple-subtitles/index.js&example=multiple.subtitles'},
             { text: 'Ass Subtitle', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-libass/index.js&example=libass'},
             { text: 'Chromecast', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-chromecast/index.js&example=chromecast'},
             { text: 'Vast', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-vast/index.js&example=vast'},
             { text: 'Video Chapters', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-chapter/index.js&example=chapter'},
+            { text: 'Video Ambilight', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-plugin-ambilight/index.js&example=ambilight'},        
           ]
         },
         {
           text: 'Libraries',
           collapsible: true,
           items: [
-            { text: 'hls.js', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/hls.js/8.0.0-beta.3/hls.min.js&example=hls' },
+            { text: 'hls.js', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.17/hls.min.js&example=hls' },
             { text: 'flv.js', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.6.2/flv.min.js&example=flv' },
             { text: 'dash.js', link: 'https://artplayer.org/?libs=https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.5.2/dash.all.min.js&example=dash' },
             { text: 'mpegts.js', link: 'https://artplayer.org/?libs=https://cdn.jsdelivr.net/npm/mpegts.js@1.7.3/dist/mpegts.min.js&example=mpegts' },
             { text: 'webtorrent.js', link: 'https://artplayer.org/?libs=https://cdn.jsdelivr.net/npm/webtorrent@1/webtorrent.min.js&example=webtorrent' },
+          ]
+        },
+        {
+          text: 'Proxys',
+          collapsible: true,
+          items: [
+            { text: 'Canvas', link: 'https://artplayer.org/?libs=./uncompiled/artplayer-proxy-canvas/index.js&example=canvas' },
           ]
         },
       ],
@@ -171,6 +188,14 @@ const config = {
     [
       'link',
       { rel: "shortcut icon", href: "/document/favicon.ico" }
+    ],
+    [
+      'meta',
+      { name: 'google-adsense-account', content: 'ca-pub-8579453810848662' }
+    ],
+    [
+      'script',
+      { async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8579453810848662", crossorigin: "anonymous" }
     ]
   ]
 }

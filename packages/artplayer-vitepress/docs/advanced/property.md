@@ -344,7 +344,7 @@ art.on('ready', () => {
 
 -   Type: `Function`
 
-下载当前视频帧的截图
+下载当前视频帧的截图, 可选参数为截图名字
 
 <div className="run-code">▶ Run Code</div>
 
@@ -355,7 +355,7 @@ var art = new Artplayer({
 });
 
 art.on('ready', () => {
-    art.screenshot();
+    art.screenshot('your-name');
 });
 ```
 
@@ -940,4 +940,51 @@ art.on('ready', () => {
 		];
 	}, 3000);
 })
+```
+
+## `thumbnails`
+
+-   Type: `Setter/Getter`
+-   Parameter: `Object`
+
+动态设置缩略图
+
+<div className="run-code">▶ Run Code</div>
+
+```js
+var art = new Artplayer({
+	container: '.artplayer-app',
+	url: '/assets/sample/video.mp4',
+});
+
+art.on('ready', () => {
+    art.thumbnails = {
+        url: '/assets/sample/thumbnails.png',
+        number: 60,
+        column: 10,
+    };
+});
+```
+
+## `subtitleOffset`
+
+-   Type: `Setter/Getter`
+-   Parameter: `Number`
+
+动态设置字幕偏移
+
+<div className="run-code">▶ Run Code</div>
+
+```js
+var art = new Artplayer({
+	container: '.artplayer-app',
+	url: '/assets/sample/video.mp4',
+    subtitle: {
+        url: '/assets/sample/subtitle.srt',
+    },
+});
+
+art.on('ready', () => {
+    art.subtitleOffset = 1;
+});
 ```

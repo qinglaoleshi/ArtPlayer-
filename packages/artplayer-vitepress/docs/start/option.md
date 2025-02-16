@@ -853,6 +853,7 @@ var art = new Artplayer({
 | `column` | `Number` | 预览图列数 |
 | `width`  | `Number` | 预览图宽度 |
 | `height` | `Number` | 预览图高度 |
+| `scale`  | `Number` | 预览图缩放 |
 
 <div className="run-code">▶ Run Code</div>
 
@@ -883,7 +884,7 @@ var art = new Artplayer({
 
 | 属性        | 类型       | 描述                                |
 | ----------- | ---------- | ----------------------------------- |
-| `name`       | `String`   | 字幕名字                            |
+| `name`      | `String`   | 字幕名字                            |
 | `url`       | `String`   | 字幕地址                            |
 | `type`      | `String`   | 字幕类型，可选 `vtt`, `srt`, `ass`  |
 | `style`     | `Object`   | 字幕样式                            |
@@ -1198,3 +1199,20 @@ var art = new Artplayer({
 [artplayer/types/cssVar.d.d.ts](https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/types/cssVar.d.ts)
 
 :::
+
+## `proxy`
+
+-   Type: `function`
+-   Default: `undefined`
+
+函数可以返回一个第三方的 `HTMLCanvasElement` 或者 `HTMLVideoElement`，例如可以代理一个已经存在的 `video` dom元素
+
+<div className="run-code">▶ Run Code</div>
+
+```js{4}
+var art = new Artplayer({
+    container: '.artplayer-app',
+    url: '/assets/sample/video.mp4',
+    proxy: () => document.createElement('video')
+});
+```

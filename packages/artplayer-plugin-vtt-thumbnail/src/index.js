@@ -4,7 +4,7 @@ export default function artplayerPluginVttThumbnail(option) {
     return async (art) => {
         const {
             constructor: {
-                utils: { setStyle, isMobile },
+                utils: { setStyle, isMobile, addClass },
             },
             template: { $progress },
         } = art;
@@ -27,11 +27,12 @@ export default function artplayerPluginVttThumbnail(option) {
         }
 
         art.controls.add({
-            name: 'thumbnails',
+            name: 'vtt-thumbnail',
             position: 'top',
             index: 20,
             style: option.style || {},
             mounted($control) {
+                addClass($control, 'art-control-thumbnails');
                 art.on('setBar', async (type, percentage, event) => {
                     const isMobileDroging = type === 'played' && event && isMobile;
 

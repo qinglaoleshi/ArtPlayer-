@@ -68,6 +68,7 @@ export default {
     autoPlayback: b,
     autoOrientation: b,
     airplay: b,
+    proxy: `?${f}`,
     plugins: [f],
     layers: [ComponentOption],
     contextmenu: [ComponentOption],
@@ -103,6 +104,7 @@ export default {
         column: n,
         width: n,
         height: n,
+        scale: n,
     },
     subtitle: {
         url: s,

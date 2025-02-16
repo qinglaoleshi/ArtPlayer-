@@ -156,6 +156,7 @@ export default class Artplayer extends Emitter {
             autoPlayback: false,
             autoOrientation: false,
             airplay: false,
+            proxy: undefined,
             layers: [],
             contextmenu: [],
             controls: [],
@@ -169,6 +170,7 @@ export default class Artplayer extends Emitter {
                 column: 10,
                 width: 0,
                 height: 0,
+                scale: 1,
             },
             subtitle: {
                 url: '',
@@ -187,7 +189,7 @@ export default class Artplayer extends Emitter {
             icons: {},
             cssVar: {},
             customType: {},
-            lang: navigator.language.toLowerCase(),
+            lang: navigator?.language.toLowerCase(),
         };
     }
 

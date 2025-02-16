@@ -118,7 +118,6 @@ declare class Artplayer extends Player {
             options?: boolean | AddEventListenerOptions,
         ): () => void;
         hover(element: HTMLElement, mouseenter?: (event: Event) => any, mouseleave?: (event: Event) => any): void;
-        loadImg(element: HTMLImageElement | string): Promise<HTMLImageElement>;
         remove(event: Event): void;
     };
 
@@ -153,6 +152,9 @@ declare class Artplayer extends Player {
     readonly subtitle: {
         get url(): string;
         set url(url: string);
+        get textTrack(): TextTrack;
+        get activeCues(): VTTCue[];
+        get cues(): VTTCue[];
         style(name: string | Partial<CSSStyleDeclaration>, value?: string): void;
         switch(url: string, option?: Subtitle): Promise<string>;
     } & Component;
@@ -163,8 +165,8 @@ declare class Artplayer extends Player {
 
     readonly hotkey: {
         keys: Record<string, ((event: Event) => any)[]>;
-        add(key: number, callback: (this: Artplayer, event: Event) => any): Artplayer['hotkey'];
-        remove(key: number, callback: Function): Artplayer['hotkey'];
+        add(key: string, callback: (this: Artplayer, event: Event) => any): Artplayer['hotkey'];
+        remove(key: string, callback: Function): Artplayer['hotkey'];
     };
 
     readonly mask: Component;
